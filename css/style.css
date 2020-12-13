@@ -72,16 +72,29 @@ header a:focus {
 }
 header a {
   display: block;
+  height: 100%;
   font-size: 14px;
   font-weight: 500;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 header a.link-active {
+  position: relative;
+  height: 100%;
   color: var(--hover-color);
 }
 .header-nav a {
   color: var(--primary-text-color);
+}
+.link-active::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  background: #2196f3;
+  border-radius: 2px;
 }
 .header-contacts a {
   display: flex;
@@ -142,6 +155,7 @@ h1 {
   text-transform: uppercase;
 }
 .hero-section button {
+  position: relative;
   background-color: var(--hover-color);
   padding: 10px 32px;
   border-radius: 4px;
@@ -151,6 +165,11 @@ h1 {
   font-size: 16px;
   font-weight: 700;
   line-height: 1.875;
+}
+.hero-section button:hover {
+  background: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 
 .features-section {
@@ -323,6 +342,7 @@ h1 {
   margin: -15px;
 }
 .portfolio li {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: solid 1px #eeeeee;
@@ -331,16 +351,51 @@ h1 {
   width: 370px;
   margin: 15px;
 }
+.product-overlay {
+  position: absolute;
+  top: 100%;
+  padding: 63px 24px;
+  display: inline-block;
+  width: 370px;
+  height: 294px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: #ffffff;
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.tc-thumb {
+  position: relative;
+  width: 100%;
+  height: 294px;
+  overflow: hidden;
+}
 .portfolio li:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.portfolio li:hover .product-overlay {
+  transform: translateY(-100%);
+}
+.port-description {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 .main-section .ul-items {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
 }
+
 .main-section b {
+  position: relative;
+  z-index: 3;
   margin-top: 20px;
   margin-left: 24px;
   font-size: 18px;
@@ -349,6 +404,8 @@ h1 {
   color: var(--primary-text-color);
 }
 .main-section span {
+  position: relative;
+  z-index: 3;
   margin-top: 4px;
   margin-left: 24px;
   font-size: 16px;
