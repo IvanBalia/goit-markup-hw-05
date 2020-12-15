@@ -474,7 +474,6 @@ h1 {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  padding: 12px;
 }
 .team-social-networks li:not(:first-child) {
   margin-left: 10px;
@@ -564,6 +563,13 @@ h1 {
   padding-top: 12px;
   padding-bottom: 40px;
 }
+.team-social-networks a {
+  display: flex;
+  width: inherit;
+  height: inherit;
+  justify-content: center;
+  align-items: center;
+}
 .social-links-list {
   display: flex;
   align-items: baseline;
@@ -572,13 +578,20 @@ h1 {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  padding: 12px;
   background: rgba(255, 255, 255, 0.1);
   margin-top: 0;
 }
 .social-links li:not(:first-child) {
   margin-left: 10px;
   margin-top: 0;
+}
+.social-links-list a {
+  display: flex;
+  margin: 0;
+  width: inherit;
+  height: inherit;
+  justify-content: center;
+  align-items: center;
 }
 .social-links-list svg {
   fill: var(--primary-background-color);
